@@ -7,23 +7,29 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <form>
+    <form id="registrationForm">
         <h1>Registration Form</h1>
         
         <label for="name">Enter your name:</label>
-        <input type="text" id="name" name="name" placeholder="Your Name">
+        <input type="text" id="name" name="name" placeholder="Your Name" required>
+        <span class="error-message" id="name-error"></span>
         
         <label for="password">Enter your password:</label>
-        <input type="password" id="password" name="password" placeholder="Your Password">
+        <input type="password" id="password" name="password" placeholder="Your Password" required>
+        <span class="error-message" id="password-error"></span>
         
         <label for="userType">Select user type:</label>
-        <select id="userType" name="userType">
+        <select id="userType" name="userType" required>
+            <option value="" disabled selected hidden>Choose here</option>
             <option value="admin">Admin</option>
             <option value="moderator">Moderator</option>
             <option value="user">User</option>
         </select>
+        <span class="error-message" id="userType-error"></span>
         
         <button type="submit">Register</button>
     </form>
+
+    <script src="valid.js"></script>
 </body>
 </html>
